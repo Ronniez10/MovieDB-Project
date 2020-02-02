@@ -1,8 +1,6 @@
 
 use `moviedb`;
 
-DROP TABLE IF EXISTS `course`;
-
 CREATE TABLE `userRating` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(128) DEFAULT NULL,
