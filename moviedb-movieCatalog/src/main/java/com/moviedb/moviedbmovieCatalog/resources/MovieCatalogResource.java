@@ -65,14 +65,18 @@ public class MovieCatalogResource
 
    }
 
-   @PostMapping("/{userId}")
-   public List<CatalogItem> postRatingForMovie(@PathVariable int userId)
+   @PostMapping("/")
+   public UserManager postRatingForMovie(@RequestBody UserRating userRating)
    {
-       UserManager userManager = userManagerInfo.getUserRating(userId);
+       UserRating userRating1 = userManagerInfo.postUser(userRating);
 
+       UserManager userManager = new UserManager();
 
+       userManager.setUsername(userRating1.getUsername());
+       userManager.setUserId(userRating1.getUserId());
+       userManager.setRatings(userRating1.getRatings());
 
-       return null;
+       return userManager;
    }
 
 

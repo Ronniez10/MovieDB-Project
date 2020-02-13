@@ -4,6 +4,10 @@ import java.util.List;
 
 public class UserManager {
 
+    //This Class is like a ADDITION of UserRating and Rating
+    //It has a property of both the classes.
+
+
     private int userId;
 
     private String username;

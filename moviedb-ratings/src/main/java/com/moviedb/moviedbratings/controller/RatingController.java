@@ -26,7 +26,7 @@ public class RatingController {
         return ratingsRepository.findByUserRatingUserId(userId);
     }
 
-    /*@PostMapping("/userRatings/{userId}/ratings" )*/
+   /* @PostMapping("/userRatings/{userId}/ratings" )*/
     public Rating createRating( Rating rating, int userId) {
         return userRatingsRepository.findById(userId).map(userRating -> {
             rating.setUserRating(userRating);
