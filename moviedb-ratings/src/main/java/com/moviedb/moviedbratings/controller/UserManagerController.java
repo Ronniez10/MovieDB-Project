@@ -22,7 +22,7 @@ public class UserManagerController {
 
     private Logger log = Logger.getLogger(UserManagerController.class.getName());
 
-    
+
     @GetMapping("/userRatings/{userId}/ratings")
     public UserManager getUserRating(@PathVariable("userId") int userId)
     {
