@@ -5,7 +5,7 @@ import com.moviedb.moviedbmovieCatalog.models.Movie;
 import com.moviedb.moviedbmovieCatalog.models.Rating;
 import com.moviedb.moviedbmovieCatalog.models.SearchMovie;
 import com.moviedb.moviedbmovieCatalog.models.SearchMovieResult;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+//import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -22,7 +22,7 @@ public class MovieInfo
         return restTemplate.getForObject("http://moviedb-movieInfo-service/movies/search/"+movie,SearchMovieResult.class);
     }
 
-    @HystrixCommand(fallbackMethod = "getFallbackMovie")
+    //@HystrixCommand(fallbackMethod = "getFallbackMovie")
     Movie getMovie(Rating rating) {
         return restTemplate.getForObject("http://moviedb-movieInfo-service/movies/"+rating.getMovieId(), Movie.class);
     }
